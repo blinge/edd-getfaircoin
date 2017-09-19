@@ -93,7 +93,7 @@ function getfaircoin_price($price){
   global $edd_options;
     
   if( $price == 0 ) {
-    $price = '1€ = '.number_format($edd_options['faircoin_price'], 0, '.', ',').' fair';
+    $price = '1€ = '.number_format($edd_options['faircoin_price'], 6, '.', ',').' fair';
   }
   return $price;
 }
@@ -107,7 +107,7 @@ function getfaircoin_currency_filter($price){
   echo 'Price: '.$price;
   if( $price == 1){//strpos($price, '1 €') !== false ){
     echo 'Price: '.$price;
-    $price = $edd_options['faircoin_price'];//.' 1€ = '.number_format($edd_options['faircoin_price'], 0, '.', ',').' fair'; 
+    $price = $edd_options['faircoin_price'];//.' 1€ = '.number_format($edd_options['faircoin_price'], 6, '.', ',').' fair'; 
   }
   $price_arr = explode(' ', $price);
   if( count( $price_arr ) > 1 ) {
